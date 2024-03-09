@@ -2166,7 +2166,7 @@ def resolve_egg_link(path):
     return next(dist_groups, ())
 
 
-register_finder(pkgutil.ImpImporter, find_on_path)
+register_finder(pkgutil.zipimporter, find_on_path)
 
 if hasattr(importlib_machinery, 'FileFinder'):
     register_finder(importlib_machinery.FileFinder, find_on_path)
